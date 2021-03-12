@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job openings form</title>
+</head>
+<body>
+    <h1>Enter Job Data</h1>
+    <form>
+        <label for="title">Title:</label>
+        <input id="title" type="text" pattern="^[A-Z a-z]+$" required>
+        <br><br>
+        <label for="type">Type:</label>
+        <select id="type">
+            <option>1.Analyst</option>
+            <option>2.Programmer</option>
+            <option>3.Manager</option>
+            <option>4.Software</option>
+        </select>
+        <br><br>
+        <label for="dept">Department:</label>
+        <select id="dept">
+            <option>Computer Science</option>
+            <option>Information Technology</option>
+            <option>Electrical Engineering</option>
+        </select>
+        <br><br>
+        <label for="county">Country:</label>
+        <select id="country">
+            <option>India</option>
+            <option>Japan</option>
+            <option>Russia</option>
+        </select>
+        <br><br>
+        <label for="des">Description:</label>
+        <textarea id="des" cols="30" rows="20" required></textarea>
+        <br><br>
+        <label for="date">Opening Date:</label>
+        <input id="date" type="date" min="2000-01-01" max="" value="" required>
+        <br><br>
+        <input id="btn1" type="submit">
+
+    </form>
+    <script>
+        // creating date object 
+        const date = new Date();
+        
+        //Slicing date to required format
+        const today = date.toISOString().slice(0,10);
+
+        //showing date in input field
+        const currentDate = document.getElementById("date")
+        currentDate.value = today;
+        currentDate.max = today;
+    </script>
+</body>
+</html>
